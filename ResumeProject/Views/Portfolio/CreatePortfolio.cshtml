@@ -1,0 +1,19 @@
+﻿@model ResumeProject.Entities.Portfolio
+@{
+    ViewData["Title"] = "CreatePortfolio";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>CreatePortfolio</h1>
+
+
+<form method="post">
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="PortfolioTitle" style="color:black" />
+    <br />
+    <label>Görsel URL</label>
+    <input type="text" asp-for="ImageUrl" style="color:black" />
+    <br />
+    <button>Projeyi Oluştur</button>
+</form>
