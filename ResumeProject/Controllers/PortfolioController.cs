@@ -28,7 +28,6 @@ namespace ResumeProject.Controllers
         [HttpPost]
         public IActionResult CreatePortfolio(Portfolio portfolio)
         {
-            portfolio.status = true;
             _context.Portfolios.Add(portfolio);
             _context.SaveChanges();
             return RedirectToAction("PortfolioList");

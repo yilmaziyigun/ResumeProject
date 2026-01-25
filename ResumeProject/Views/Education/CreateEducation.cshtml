@@ -1,0 +1,69 @@
+﻿@model ResumeProject.Entities.Education
+@{
+    ViewData["Title"] = "CreateEducation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h3 class="mb-4 text-white">Eğitim Ekle</h3>
+
+<div class="card bg-dark text-white shadow-lg">
+    <div class="card-body">
+
+        <form method="post">
+
+            <input type="hidden" asp-for="EducationId" />
+
+            <div class="mb-3">
+                <label class="form-label">Okul</label>
+                <input type="text"
+                       asp-for="EgitimOkul"
+                       class="form-control bg-secondary text-white border-0"
+                       placeholder="Okul" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Bölüm</label>
+                <input type="text"
+                       asp-for="EgitimBolum"
+                       class="form-control bg-secondary text-white border-0"
+                       placeholder="Bölüm" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Genel not Ortalaması</label>
+                <input type="text"
+                       asp-for="Gno"
+                       class="form-control bg-secondary text-white border-0"
+                       placeholder="Genel not Ortalaması" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Açıklama</label>
+                <input type="text"
+                       asp-for="Aciklama"
+                       class="form-control bg-secondary text-white border-0"
+                       placeholder="Açıklama" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tarih Aralğı</label>
+                <input type="text"
+                       asp-for="Tarih"
+                       class="form-control bg-secondary text-white border-0"
+                       placeholder="Tarih Aralğı: - " />
+            </div>
+
+
+            <div class="d-flex justify-content-between">
+                <a href="/Portfolio/Index" class="btn btn-outline-light">
+                    Geri Dön
+                </a>
+
+                <button type="submit" class="btn btn-warning px-4">
+                    Eğitim Ekle
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+

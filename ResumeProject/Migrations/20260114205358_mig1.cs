@@ -118,6 +118,7 @@ namespace ResumeProject.Migrations
                 {
                     table.PrimaryKey("PK_Testimonials", x => x.TestimonialId);
                 });
+         
         }
 
         /// <inheritdoc />

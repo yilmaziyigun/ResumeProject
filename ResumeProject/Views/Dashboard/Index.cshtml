@@ -1,0 +1,67 @@
+﻿@model ResumeProject.Entities.About
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="min-h-screen bg-slate-900 p-6 text-slate-200">
+
+    <!-- HEADER -->
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-white">Admin Dashboard</h1>
+        <p class="text-slate-400">Sistem genel görünümü</p>
+    </div>
+
+    <!-- STAT CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+            <p class="text-slate-400 text-sm">Yetenekler</p>
+            <h3 class="text-4xl font-bold text-white">@ViewBag.SkillCount</h3>
+        </div>
+
+        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+            <p class="text-slate-400 text-sm">Projeler</p>
+            <h3 class="text-4xl font-bold text-white">@ViewBag.ProjectCount</h3>
+        </div>
+
+        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+            <p class="text-slate-400 text-sm">Deneyimler</p>
+            <h3 class="text-4xl font-bold text-white">@ViewBag.ExperienceCount</h3>
+        </div>
+
+        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+            <p class="text-slate-400 text-sm">Sosyal Medya</p>
+            <h3 class="text-4xl font-bold text-white">@ViewBag.SocialCount</h3>
+        </div>
+
+    </div>
+
+    <!-- ABOUT SUMMARY -->
+    <div class="bg-slate-800 rounded-xl border border-slate-700 p-8">
+        <h2 class="text-2xl font-bold text-white mb-4">Hakkımda (Özet)</h2>
+
+        @if (Model != null)
+        {
+            <div class="flex gap-6 items-start">
+                <img src="@Model.ImageUrl"
+                     class="w-28 h-28 rounded-full object-cover border border-slate-600" />
+
+                <div>
+                    <h3 class="text-xl font-semibold text-white">
+                        @Model.NameSurname
+                    </h3>
+                    <p class="text-slate-400 mt-2 max-w-3xl">
+                        @Model.Description
+                    </p>
+                    
+                </div>
+            </div>
+        }
+        else
+        {
+            <p class="text-slate-400">Hakkımda bilgisi bulunamadı.</p>
+        }
+    </div>
+
+</div>

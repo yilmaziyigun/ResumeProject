@@ -1,29 +1,50 @@
-﻿		<!-- section home -->
-<section id="home" class="home d-flex align-items-center">
-	<div class="container">
+﻿@model ResumeProject.Entities.Social
+	<!-- section home -->
+@if (Model != null)
+{
+    <section id="home" class="home d-flex align-items-center">
+        <div class="container">
+            <div class="intro">
 
-		<!-- intro -->
-		<div class="intro">
-			<!-- avatar image -->
-			<img src="https://bidosya.tr/uploadss/2026/01/15/f3ab9312cb34.png" alt="Yılmaz" style="width: 300px; height: 300px; object-fit: cover; border-radius: 15px class="mb-4" />
+                <!-- avatar -->
+                <img src="@Model.ImageUrl"
+                     alt="@Model.headername"
+                     style="width: 300px; height: 300px; object-fit: cover; border-radius: 15px"
+                     class="mb-4" />
 
-			<!-- info -->
-			<h1 class="mb-2 mt-0">Yılmaz İYİGÜN</h1>
-			<span>I'm a <span class="text-rotating"> Software Developer, Full Stack developer</span></span>
+                <!-- info -->
+                <h1 class="mb-2 mt-0">@Model.headername</h1>
+                <span>I'm a <span class="text-rotating">@Model.title</span></span>
 
-			<!-- social icons -->
-			<ul class="social-icons light list-inline mb-0 mt-4">
-				<li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-				<li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-				<li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
-				<li class="list-inline-item"><a href="#"><i class="fab fa-github"></i></a></li>
-			</ul>
+                <!-- social icons -->
+                @{
+                    var socialMedias = ViewBag.SocialMedias as List<ResumeProject.Entities.Social>;
+                }
 
-			<!-- buttons -->
-			<div class="mt-4">
-				<a href="#contact" class="btn btn-default">Bana Ulaşın</a>
-			</div>
-		</div>
+                @if (socialMedias != null && socialMedias.Any())
+                {
+                    <ul class="social-icons light list-inline mb-0 mt-4">
+                        @foreach (var item in socialMedias)
+                        {
+                            <li class="list-inline-item">
+                                <a href="@item.Link" target="_blank" rel="noopener">
+                                    <i class="@item.Icon"></i>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                }
+                <!-- buttons -->
+                <div class="mt-4">
+                    <a href="#contact" class="btn btn-default">Bana Ulaşın</a>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+			
+		
         
 		<!-- scroll down mouse wheel -->
 		<div class="scroll-down">

@@ -1,0 +1,75 @@
+﻿@model List<ResumeProject.Entities.Education>
+@{
+    ViewData["Title"] = "EducationList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3 class="mb-4 text-white">Eğitim Listesi</h3>
+
+<div class="card bg-dark text-white shadow-lg">
+    <div class="card-body">
+        <table class="table table-dark table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Okul</th>
+                    <th>Bölüm</th>
+                    <th>GNO</th>
+                    <th>Açıklama</th>
+                    <th>Tarih</th>
+                    <th class="text-center">Sil</th>
+                    <th class="text-center">Güncelle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.EducationId</td>
+
+                        <td class="fw-semibold">
+                            @item.EgitimOkul
+                        </td>
+
+                        <td>
+                            @item.EgitimBolum
+                        </td>
+
+                        <td>
+                            @item.Gno
+                        </td>
+
+                        <td>
+                            @item.Aciklama
+                        </td>
+
+                        <td>
+                            @item.Tarih
+                        </td>
+
+                        <td class="text-center">
+                            <a href="/Education/DeleteEducation/@item.EducationId"
+                               class="btn btn-sm btn-outline-danger"
+                               onclick="return confirm('Silmek istediğinize emin misiniz?')">
+                                Sil
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            <a href="/Education/UpdateEducation/@item.EducationId"
+                               class="btn btn-sm btn-outline-warning">
+                                Güncelle
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="text-end mt-3">
+            <a href="/Education/CreateEducation/" class="btn btn-success">
+                + Yeni Eğitim Girişi
+            </a>
+        </div>
+    </div>
+</div>

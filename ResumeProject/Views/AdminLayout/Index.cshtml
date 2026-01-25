@@ -2,7 +2,6 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
 
 <html class="dark" lang="en">
@@ -11,6 +10,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Developer Portfolio Admin Dashboard</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
@@ -34,6 +34,8 @@
             },
         }
     </script>
+
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -63,73 +65,83 @@
             </div>
         </div>
         <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-1 custom-scrollbar">
-            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="/Dashboard/Index">
                 <span class="material-symbols-outlined">dashboard</span>
-                <span class="text-sm font-medium">Dashboard</span>
+                <span class="text-sm font-medium">Ana Sayfa</span>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="/AboutMe/AboutMe">
                 <span class="material-symbols-outlined">person</span>
-                <span class="text-sm font-medium">About Me</span>
+                <span class="text-sm font-medium">Hakkımda</span>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white sidebar-item-active hover:text-white hover:bg-slate-800 transition-colors" href="#">
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="/Experience/ExperienceList">
                 <span class="material-symbols-outlined">work</span>
-                <span class="text-sm font-medium">Experiences</span>
+                <span class="text-sm font-medium">Deneyimlerim</span>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="/Education/EducationList">
                 <span class="material-symbols-outlined">school</span>
-                <span class="text-sm font-medium">Education</span>
+                <span class="text-sm font-medium">Eğitimlerim</span>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="/Skill/SkillList">
                 <span class="material-symbols-outlined">code</span>
-                <span class="text-sm font-medium">Skills</span>
+                <span class="text-sm font-medium">Yeteneklerim</span>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400  transition-colors" href="#">
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400  transition-colors" href="/Portfolio/PortfolioList">
                 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">layers</span>
-                <span class="text-sm font-semibold">Projects</span>
+                <span class="text-sm font-semibold">Projelerim</span>
             </a>
             <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
                 <span class="material-symbols-outlined">verified</span>
-                <span class="text-sm font-medium">Certificates</span>
+                <span class="text-sm font-medium">Sertifikalarım</span>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
-                <span class="material-symbols-outlined">article</span>
-                <span class="text-sm font-medium">Blog Posts</span>
-            </a>
+       
             <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
                 <span class="material-symbols-outlined">forum</span>
-                <span class="text-sm font-medium">References</span>
+                <span class="text-sm font-medium">Referanslarım</span>
             </a>
-            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="/Message/MessageList">
                 <span class="material-symbols-outlined">mail</span>
-                <span class="text-sm font-medium">Messages</span>
+                <span class="text-sm font-medium">Mesajlar</span>
             </a>
         </nav>
         <div class="p-4 border-t border-slate-800 space-y-1">
             <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" href="#">
                 <span class="material-symbols-outlined">settings</span>
-                <span class="text-sm font-medium">Settings</span>
+                <span class="text-sm font-medium">Ayarlar</span>
             </a>
             <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-red-400 hover:text-red-300 hover:bg-red-900/20 transition-colors" href="#">
                 <span class="material-symbols-outlined" style="color: inherit;">logout</span>
-                <span class="text-sm font-medium">Logout</span>
+                <span class="text-sm font-medium">Çıkış Yap</span>
             </a>
         </div>
     </aside>
     <!-- Main Content -->
-    <main class="ml-64 flex-1 flex flex-col h-screen">
+    <main class="ml-64 flex-1 flex flex-col h-screen overflow-y-auto">
         <!-- Top Navbar -->
         <header class="h-16 border-b border-slate-800 bg-background-dark/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-40">
             <div class="flex items-center gap-4">
-                <h2 class="text-white text-lg font-bold leading-tight tracking-tight">Deneyimlerim </h2>
+                <h2 class="text-white text-lg font-bold leading-tight tracking-tight"> </h2>
             </div>
             <div class="flex items-center gap-6">
                 <div class="flex items-center gap-3">
-                    <button class="relative p-2 text-slate-400 hover:text-white transition-colors">
+                    <a asp-controller="Message" asp-action="UnreadMessages"
+                       class="relative p-2 text-slate-400 hover:text-white transition-colors block">
+
                         <span class="material-symbols-outlined">notifications</span>
-                        <span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border border-background-dark"></span>
-                    </button>
+
+                        @if (ViewBag.UnreadCount > 0)
+                        {
+                            <span class="absolute -top-1 -right-1
+                             min-w-[18px] h-[18px]
+                             bg-red-500 text-white text-xs
+                             rounded-full flex items-center justify-center">
+                                @ViewBag.UnreadCount
+                            </span>
+                        }
+                    </a>
+
                     <div class="h-8 w-[1px] bg-slate-800 mx-2"></div>
                 </div>
+
                 <div class="flex items-center gap-3">
                     <div class="text-right">
                         <p class="text-white text-sm font-bold">Admin</p>
@@ -145,5 +157,33 @@
 
      @RenderBody()
     </main>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
+</main>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Tarayıcıdaki mevcut sayfa adresini al
+            var currentUrl = window.location.pathname;
+
+            // Menüdeki tüm linkleri seç
+            var links = document.querySelectorAll("aside nav a");
+
+            links.forEach(function (link) {
+                // Eğer linkin href'i ile mevcut sayfa adresi aynıysa
+                if (link.getAttribute("href") === currentUrl) {
+                    // Mavi yanmasını sağlayan sınıfları ekle
+                    link.classList.add("sidebar-item-active", "text-white");
+                    // Sönük gri rengi kaldır
+                    link.classList.remove("text-slate-400");
+                } 
+                else {
+                    // Diğer her şeyden aktiflik sınıflarını çıkar
+                    link.classList.remove("sidebar-item-active", "text-white");
+                    link.classList.add("text-slate-400");
+                }
+            });
+        });
+    </script>

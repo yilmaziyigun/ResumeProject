@@ -1,0 +1,36 @@
+﻿@model ResumeProject.Entities.Skill
+@{
+    ViewData["Title"] = "UpdateSkill";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<h2>Yetenek Güncelleme Sayfası</h2>
+<br />
+
+<form method="post">
+
+    <!-- 🔴 ŞART -->
+    @Html.HiddenFor(x => x.SkillId)
+    @Html.HiddenFor(x => x.AboutId)
+
+    @Html.Label("Yetenek Başlığı")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Yetenek Derecesi (%)")
+
+    @Html.TextBoxFor(x => x.Percent, new {
+    @class = "form-control",
+        type = "number",
+        min = "0",
+        max = "100",
+        step = "1"
+        })
+
+    @Html.ValidationMessageFor(x => x.Percent, "", new { @class = "text-danger" })
+
+    <br /><br />
+
+    <button class="btn btn-primary">Kaydet</button>
+</form>

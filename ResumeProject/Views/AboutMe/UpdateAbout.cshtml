@@ -1,0 +1,70 @@
+﻿@model ResumeProject.Entities.About
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="min-h-screen bg-slate-900 p-6">
+    <div class="max-w-3xl mx-auto bg-slate-800 rounded-2xl p-6 shadow-lg">
+
+        <h3 class="text-white text-2xl mb-4">Profil Güncelle</h3>
+
+        <form asp-action="UpdateAbout" method="post" class="space-y-6">
+            <input type="hidden" asp-for="AboutId" />
+            <div class="mt-3">
+            <label class="block text-sm font-semibold text-slate-300 mb-1">Önizleme:</label>
+            <div class="w-48 h-48 rounded-full overflow-hidden border-2 border-slate-600 bg-slate-700 flex items-center justify-center">
+                <img id="ImagePreview" src="@Model.ImageUrl" alt="Profil Önizleme" class="w-full h-full object-cover " />
+            </div>
+    </div>
+            <!-- Profil Resim URL -->
+            <div class="space-y-2">
+                <label asp-for="ImageUrl" class="block text-sm font-semibold text-slate-300">
+                    Profil Resim URL
+                </label>
+                <input asp-for="ImageUrl"
+                       placeholder="https://example.com/profil.jpg"
+                       class="w-full pl-4 pr-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all" />
+                <span asp-validation-for="ImageUrl" class="text-red-400 text-sm"></span>
+            </div>
+
+            <!-- Ad Soyad -->
+            <div class="space-y-2">
+                <label asp-for="NameSurname" class="block text-sm font-semibold text-slate-300">
+                    Ad Soyad
+                </label>
+                <input asp-for="NameSurname"
+                       class="w-full pl-4 pr-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                       placeholder="Adınız Soyadınız" />
+                <span asp-validation-for="NameSurname" class="text-red-400 text-sm"></span>
+            </div>
+
+            <!-- Hakkımda Açıklama -->
+            <div class="space-y-2">
+                <label asp-for="Description" class="block text-sm font-semibold text-slate-300">
+                    Hakkımda
+                </label>
+                <textarea asp-for="Description"
+                          rows="6"
+                          class="w-full pl-4 pr-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none"
+                          placeholder="Kendiniz hakkında kısa bir açıklama yazın..."></textarea>
+                <span asp-validation-for="Description" class="text-red-400 text-sm"></span>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="flex items-center gap-4 pt-6 border-t border-slate-800">
+                <button type="submit"
+                        class="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-500/30">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">save</span>
+                    Profili Güncelle
+                </button>
+                <a href="@Url.Action("AboutMe")"
+                   class="flex-1 flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-xl font-bold transition-all">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+                    İptal
+                </a>
+            </div>
+        </form>
+
+    </div>
+</div>

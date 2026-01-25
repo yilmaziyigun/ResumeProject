@@ -6,5 +6,6 @@
         public string PortfolioTitle { get; set; }
         public string ImageUrl { get; set; }
         public bool status { get; set; }
+
     }
 }

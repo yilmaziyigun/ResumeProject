@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using ResumeProject.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ResumeContext>();
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
